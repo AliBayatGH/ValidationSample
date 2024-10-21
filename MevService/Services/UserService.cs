@@ -4,7 +4,7 @@ namespace MevService.Services;
 
 public class UserService : IUserService
 {
-    private static List<User> _users = new List<User>();
+    private static readonly List<User> _users = new();
 
     public void SaveUser(User user)
     {

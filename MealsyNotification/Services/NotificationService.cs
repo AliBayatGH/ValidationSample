@@ -24,8 +24,7 @@ public class NotificationService : INotificationService
 
         return new List<NotificationModel>
         {
-            new NotificationModel
-            {
+            new() {
                 NotificationType = NotificationType.MevUser,
                 BusinessLocationId = Guid.NewGuid(), // Mocked location Id
                 ResourceKey = resourceKey,

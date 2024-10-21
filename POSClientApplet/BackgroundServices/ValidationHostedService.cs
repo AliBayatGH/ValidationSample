@@ -17,7 +17,7 @@ public class ValidationHostedService : IHostedService
         while (!cancellationToken.IsCancellationRequested)
         {
             await _userValidationService.ValidatePendingUsers();
-            await Task.Delay(_pollingInterval, cancellationToken); 
+            await Task.Delay(_pollingInterval, cancellationToken);
         }
     }
 

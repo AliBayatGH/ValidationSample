@@ -1,4 +1,4 @@
-﻿namespace MealsyHr.Models;
+﻿namespace Client.Models;
 
 public class User
 {

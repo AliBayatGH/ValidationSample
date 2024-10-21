@@ -6,9 +6,8 @@ namespace POSClientApplet.Services;
 public class UserValidationService : IUserValidationService
 {
     private readonly HttpClient _httpClient;
-    private  readonly string _mevServiceBaseUrl = "http://localhost:5000/";
-    private  readonly string _mealsyNotificationBaseUrl = "http://localhost:5002/";
-
+    private readonly string _mevServiceBaseUrl = "http://localhost:5000/";
+    private readonly string _mealsyNotificationBaseUrl = "http://localhost:5002/";
 
     public UserValidationService(HttpClient httpClient)
     {

@@ -4,7 +4,7 @@ namespace MealsyHr.Services;
 
 public class UserService : IUserService
 {
-    private static List<User> _users = new List<User>();
+    private static readonly List<User> _users = new();
     private readonly HttpClient _httpClient;
 
     public UserService(HttpClient httpClient)

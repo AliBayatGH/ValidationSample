@@ -1,21 +1,16 @@
-﻿using System.Net.Http.Json;
+﻿using Client.Models;
+using System.Net.Http.Json;
 
 namespace Client;
-public class User
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public short Status { get; set; }
-}
 
-class Program
+internal class Program
 {
-    private static readonly HttpClient _httpClient = new HttpClient();
+    private static readonly HttpClient _httpClient = new();
     private static readonly string _mevServiceBaseUrl = "http://localhost:5000/";
     private static readonly string _mealsyHrBaseUrl = "http://localhost:5001/";
     private static readonly TimeSpan _pollingInterval = TimeSpan.FromSeconds(1);
 
-    static async Task Main(string[] args)
+    private static async Task Main(string[] args)
     {
         string? name = null;
         while (name != "exit")
