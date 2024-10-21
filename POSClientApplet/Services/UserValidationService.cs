@@ -1,10 +1,14 @@
 ﻿using POSClientApplet.Models;
+using System.Text.Json;
 
 namespace POSClientApplet.Services;
 
 public class UserValidationService : IUserValidationService
 {
     private readonly HttpClient _httpClient;
+    private  readonly string _mevServiceBaseUrl = "http://localhost:5000/";
+    private  readonly string _mealsyNotificationBaseUrl = "http://localhost:5002/";
+
 
     public UserValidationService(HttpClient httpClient)
     {
@@ -13,14 +17,28 @@ public class UserValidationService : IUserValidationService
 
     public async Task ValidatePendingUsers()
     {
-        var pendingUsers = await _httpClient.GetFromJsonAsync<User[]>("api/users/pending");
-        foreach (var user in pendingUsers)
-        {
-            var isValid = ValidateExternally(user);
+        // Send request to MealsyNotification to get pending users
+        var notifications = await _httpClient.GetFromJsonAsync<NotificationModel[]>($"{_mealsyNotificationBaseUrl}api/notifications?notificationType=MevUser&resourceKey=someKey");
 
-            // Update user status based on validation
-            short newStatus = isValid ? (short)1 : (short)-1; // Active or Failed
-            await _httpClient.PostAsJsonAsync($"api/users/update/{user.Id}", newStatus);
+        foreach (var notification in notifications)
+        {
+            foreach (var userObj in notification.Notifications)
+            {
+                var userJson = JsonSerializer.Serialize(userObj);
+                var user = JsonSerializer.Deserialize<User>(userJson, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                if (user != null)
+                {
+                    var isValid = ValidateExternally(user);
+
+                    // Update user status based on validation (1 = Active, -1 = Failed)
+                    short newStatus = isValid ? (short)EntityStatus.Active : (short)EntityStatus.Failed;
+                    await _httpClient.PostAsJsonAsync($"{_mevServiceBaseUrl}api/users/update/{user.Id}", newStatus);
+                }
+            }
         }
     }
 

@@ -1,8 +1,7 @@
 
-using POSClientApplet.BackgroundServices;
-using POSClientApplet.Services;
+using MealsyNotification.Services;
 
-namespace POSClientApplet;
+namespace MealsyNotification;
 
 public class Program
 {
@@ -17,8 +16,10 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddHttpClient<IUserValidationService, UserValidationService>();
-        builder.Services.AddHostedService<ValidationHostedService>();
+        builder.Services.AddHttpClient<INotificationService, NotificationService>(client =>
+        {
+            client.BaseAddress = new Uri("http://localhost:5000"); // MevService BaseUrl
+        });
 
         var app = builder.Build();
 

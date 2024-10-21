@@ -1,0 +1,6 @@
+@MealsyNotification_HostAddress = http://localhost:5079
+
+GET {{MealsyNotification_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
