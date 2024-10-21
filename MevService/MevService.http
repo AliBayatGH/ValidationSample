@@ -1,0 +1,6 @@
+@MevService_HostAddress = http://localhost:5163
+
+GET {{MevService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

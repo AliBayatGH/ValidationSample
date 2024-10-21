@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35410.144
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MealsyHr", "MealsyHr\MealsyHr.csproj", "{669D02D3-D867-454F-B79C-0C503923A0E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MevService", "MevService\MevService.csproj", "{114215B1-0334-4A21-AD09-A146D8F17B84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSClientApplet", "POSClientApplet\POSClientApplet.csproj", "{0B0C8329-D567-41BD-833C-82A135E0126B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{669D02D3-D867-454F-B79C-0C503923A0E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{669D02D3-D867-454F-B79C-0C503923A0E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{669D02D3-D867-454F-B79C-0C503923A0E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{669D02D3-D867-454F-B79C-0C503923A0E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{114215B1-0334-4A21-AD09-A146D8F17B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{114215B1-0334-4A21-AD09-A146D8F17B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{114215B1-0334-4A21-AD09-A146D8F17B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{114215B1-0334-4A21-AD09-A146D8F17B84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0C8329-D567-41BD-833C-82A135E0126B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0C8329-D567-41BD-833C-82A135E0126B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0C8329-D567-41BD-833C-82A135E0126B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0C8329-D567-41BD-833C-82A135E0126B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

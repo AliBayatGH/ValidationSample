@@ -1,0 +1,6 @@
+@POSClientApplet_HostAddress = http://localhost:5234
+
+GET {{POSClientApplet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
