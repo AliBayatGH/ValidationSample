@@ -1,4 +1,6 @@
 
+using MevService.Services;
+
 namespace MevService;
 
 public class Program
@@ -13,6 +15,7 @@ public class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+        builder.Services.AddSingleton<IUserService, UserService>();
 
         var app = builder.Build();
 

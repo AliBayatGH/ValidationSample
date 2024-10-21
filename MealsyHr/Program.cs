@@ -1,4 +1,6 @@
 
+using MealsyHr.Services;
+
 namespace MealsyHr
 {
     public class Program
@@ -13,6 +15,9 @@ namespace MealsyHr
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddHttpClient();
+            builder.Services.AddSingleton<IUserService, UserService>();
 
             var app = builder.Build();
 
